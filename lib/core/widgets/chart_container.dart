@@ -6,6 +6,7 @@ class ChartContainer extends StatelessWidget {
   final Widget child;
   final double? height;
   final String? statTitle;
+  final String? category;
   final int? statValue;
   final int? statTarget;
 
@@ -16,6 +17,7 @@ class ChartContainer extends StatelessWidget {
     required this.child,
     this.height,
     this.statTitle,
+    this.category,
     this.statValue,
     this.statTarget,
   });
@@ -73,6 +75,15 @@ class ChartContainer extends StatelessWidget {
                           color: Colors.black54,
                         ),
                       ),
+                    if (category != null)
+                      Text(
+                        category!,
+                        style: const TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold,
+                          color: Color.fromARGB(255, 47, 1, 85),
+                        ),
+                      ),
                     if (statValue != null)
                       Text(
                         "\$$statValue",
@@ -99,7 +110,7 @@ class ChartContainer extends StatelessWidget {
 
           // Chart content
           SizedBox(
-            height: height ?? 250,
+            height: height,
             child: child,
           )
         ],

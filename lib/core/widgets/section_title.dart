@@ -19,11 +19,6 @@ class SectionTitle extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 6),
-        Container(
-          height: 2,
-          width: 55,
-          color: Colors.indigo,
-        ),
       ],
     );
   }
